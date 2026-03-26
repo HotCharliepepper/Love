@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI 시대에, 저는 어떤 삶을 살아가려 하는가</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Pretendard:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #0c1018;
+    --bg-warm: #10151f;
+    --surface: #151c2a;
+    --surface-light: #1a2336;
+    --border: rgba(125, 211, 252, 0.08);
+    --border-strong: rgba(125, 211, 252, 0.15);
+    --text: #e8edf4;
+    --text-soft: #b0bfcf;
+    --text-muted: #7a8ea3;
+    --accent: #7dd3fc;
+    --accent-dim: rgba(125, 211, 252, 0.12);
+    --purple: #c4b5fd;
+    --purple-dim: rgba(196, 181, 253, 0.10);
+    --rose: #f0a8c8;
+    --rose-dim: rgba(240, 168, 200, 0.10);
+    --green: #86efac;
+    --green-dim: rgba(134, 239, 172, 0.10);
+    --red: #fca5a5;
+    --red-dim: rgba(252, 165, 165, 0.10);
+    --gold: #e2c591;
+    --gold-dim: rgba(226, 197, 145, 0.08);
+    --serif: 'Noto Serif KR', 'Batang', Georgia, serif;
+    --sans: 'Pretendard', -apple-system, 'Apple SD Gothic Neo', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; word-break: keep-all; overflow-wrap: break-word; }
+
+  html {
+    font-size: 19px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    font-family: var(--serif);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 2.05;
+    letter-spacing: -0.01em;
+    min-height: 100vh;
+    background-image:
+      radial-gradient(ellipse at 20% 0%, rgba(125,211,252,0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 0%, rgba(196,181,253,0.04) 0%, transparent 40%);
+  }
+
+  .container {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 72px 28px 120px;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    padding-bottom: 56px;
+    margin-bottom: 8px;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    opacity: 0.7;
+    margin-bottom: 24px;
+    display: block;
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(32px, 5.5vw, 52px);
+    font-weight: 900;
+    line-height: 1.28;
+    letter-spacing: -0.03em;
+    color: #fff;
+    margin-bottom: 32px;
+  }
+
+  .hero-intro {
+    font-size: 1.05rem;
+    color: var(--text-soft);
+    line-height: 2.0;
+    max-width: 620px;
+  }
+
+  /* ── TOC ── */
+  .toc {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 40px;
+    margin-bottom: 16px;
+  }
+
+  .toc-item {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-soft);
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  /* ── Divider ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+    margin: 60px 0;
+  }
+
+  /* ── Section ── */
+  .section {
+    margin-bottom: 0;
+  }
+
+  .section-label {
+    font-family: var(--sans);
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+
+  .label-bad { background: var(--red-dim); color: var(--red); border: 1px solid rgba(252,165,165,0.15); }
+  .label-better { background: var(--accent-dim); color: var(--accent); border: 1px solid rgba(125,211,252,0.15); }
+  .label-good { background: var(--green-dim); color: var(--green); border: 1px solid rgba(134,239,172,0.15); }
+  .label-future { background: var(--rose-dim); color: var(--rose); border: 1px solid rgba(240,168,200,0.15); }
+
+  .section h2 {
+    font-family: var(--serif);
+    font-size: clamp(26px, 3.8vw, 38px);
+    font-weight: 900;
+    line-height: 1.3;
+    letter-spacing: -0.025em;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    font-family: var(--sans);
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 40px;
+  }
+
+  .section h3 {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 48px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .section p,
+  .closing-section p {
+    margin-bottom: 24px;
+    color: var(--text);
+  }
+
+  .lead {
+    font-size: 1.05rem;
+    color: #dce6f0;
+  }
+
+  /* ── Blockquote ── */
+  .quote {
+    margin: 36px 0;
+    padding: 22px 24px;
+    border-left: 3px solid var(--accent);
+    border-radius: 0 14px 14px 0;
+    background: rgba(125,211,252,0.05);
+    color: #dce8f2;
+    font-size: 1rem;
+    line-height: 2.0;
+  }
+
+  /* ── Cards ── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 32px 0;
+  }
+
+  .card {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 18px;
+    padding: 20px 18px 16px;
+  }
+
+  .card-title {
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .card li {
+    font-family: var(--sans);
+    font-size: 14.5px;
+    color: var(--text-soft);
+    line-height: 1.7;
+    padding: 5px 0;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .card li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.5;
+  }
+
+  /* ── Comparison cards ── */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 28px 0;
+  }
+
+  .compare-card {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 18px;
+    padding: 20px 18px;
+  }
+
+  .compare-card strong {
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .compare-card p {
+    font-size: 0.9rem;
+    color: var(--text-soft);
+    line-height: 1.85;
+    margin-bottom: 0;
+  }
+
+  /* ── Role cards ── */
+  .role-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 32px 0;
+  }
+
+  .role-card {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 18px;
+    padding: 20px 18px 16px;
+  }
+
+  .role-card-title {
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .role-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .role-card li {
+    font-family: var(--sans);
+    font-size: 14.5px;
+    color: var(--text-soft);
+    line-height: 1.7;
+    padding: 5px 0;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .role-card li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.5;
+  }
+
+  /* ── Highlight ── */
+  .hl {
+    color: #fff;
+    font-weight: 700;
+  }
+
+  /* ── Closing ── */
+  .closing-section {
+    margin-top: 0;
+  }
+
+  .closing-section h2 {
+    font-family: var(--serif);
+    font-size: clamp(26px, 3.8vw, 38px);
+    font-weight: 900;
+    line-height: 1.3;
+    letter-spacing: -0.025em;
+    color: #fff;
+    margin-bottom: 36px;
+  }
+
+  .closing-pledge {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #dce8f2;
+    line-height: 2.1;
+    margin-top: 36px;
+    margin-bottom: 0;
+  }
+
+  .signature {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border-strong);
+  }
+
+  .signature-name {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--text-soft);
+    letter-spacing: 0.02em;
+  }
+
+  /* ── P.S. Section ── */
+  .ps-divider {
+    margin: 80px 0 0;
+    padding-top: 64px;
+    border-top: 1px solid rgba(226, 197, 145, 0.12);
+    position: relative;
+  }
+
+  .ps-divider::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(226,197,145,0.3), transparent);
+  }
+
+  .ps-label {
+    font-family: var(--sans);
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 24px;
+    background: var(--gold-dim);
+    color: var(--gold);
+    border: 1px solid rgba(226, 197, 145, 0.15);
+  }
+
+  .ps-context {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 36px;
+    padding: 16px 20px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .ps-body {
+    position: relative;
+  }
+
+  .ps-body p {
+    margin-bottom: 24px;
+    color: var(--text);
+  }
+
+  .ps-aside {
+    font-family: var(--sans);
+    font-size: 14.5px;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    padding-left: 16px;
+    border-left: 2px solid rgba(226, 197, 145, 0.15);
+    line-height: 1.85;
+  }
+
+  .ps-final {
+    margin-top: 44px;
+    font-weight: 700;
+    color: #dce8f2;
+    line-height: 2.1;
+  }
+
+  .ps-sign {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(226, 197, 145, 0.12);
+  }
+
+  .ps-sign-name {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--gold);
+    letter-spacing: 0.01em;
+  }
+
+  .ps-sign-date {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 6px;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    html { font-size: 18px; }
+    .container { padding: 48px 20px 80px; }
+    .toc { grid-template-columns: 1fr; }
+    .card-grid,
+    .compare-grid,
+    .role-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 30px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ══════ HERO ══════ -->
+  <header class="hero">
+    <span class="hero-eyebrow">Mashcore</span>
+    <h1>AI 시대에,<br>저는 어떤 삶을<br>살아가려 하는가</h1>
+    <p class="hero-intro">
+      세상이 바뀌는 속도 앞에서 흔들리기보다, 배우고 연결하고 실행하며
+      다시 삶을 세워가려는 제 방향을 아버지와 차분하게 공유하고 싶었습니다.
+    </p>
+    <div class="toc">
+      <div class="toc-item">01 · Bad — 흔들렸던 시간들</div>
+      <div class="toc-item">02 · Better — 다시 세우기 시작한 힘</div>
+      <div class="toc-item">03 · Good — 지금 실제로 하고 있는 일</div>
+      <div class="toc-item">04 · Fantastic Future — 가정과 다음 세대의 기반</div>
+    </div>
+  </header>
+
+  <div class="divider"></div>
+
+  <!-- ══════ BAD ══════ -->
+  <section class="section">
+    <span class="section-label label-bad">Bad</span>
+    <h2>흔들렸던 시간들</h2>
+    <p class="section-sub">쉽지 않았던 현실을 가감없이 정리했습니다.</p>
+
+    <p class="lead">
+      저는 지금의 방향을 이야기하기 전에, 먼저 제가 어떤 시간을 지나왔는지
+      솔직하게 말씀드리고 싶습니다.
+    </p>
+
+    <p>
+      어릴 때 영국 유학을 하면서, 먼 타국에서 외로움을 견디는 연습을 해야 했습니다.
+      그 시절은 단순히 힘들었던 기억만이 아니라, 혼자서도 마음을 버텨내는 힘을
+      키우게 했던 시간이었습니다.
+    </p>
+
+    <p>
+      고등학교 때는 수능 성적도 어느 정도 나왔지만, 대학 진학 대신 프로게이머를
+      꿈꾸던 시기도 있었습니다. 당시에는 실력에 대한 자신감이 있었고, 실제로
+      그 방향을 진지하게 바라보기도 했습니다. 다만 시간이 지나 돌아보니,
+      게임단에 입성하는 일 역시 실력만으로 되는 것이 아니라 결국 사람들과의
+      관계, 신뢰, 연결이 함께 중요했다는 점을 나중에서야 더 분명히 깨닫게
+      되었습니다.
+    </p>
+
+    <p>
+      그 시절 아버지께 어느 정도의 지원도 요청드렸던 기억이 있습니다.
+      하지만 그 요청은 받아들여지지 않았습니다. 지금은 그 일을 단순히
+      서운함으로만 보지 않으려 합니다. 당시 집안의 경제적 사정이 넉넉하지
+      않았을 수 있고, 어린 시절 영국 유학에 들어간 비용과 대학 진학에 대한 기대,
+      그리고 아버지 세대가 중요하게 여겼던 안정과 학력의 기준도 분명
+      있었을 것이라고 생각합니다.
+    </p>
+
+    <p>
+      그때의 저는 그 현실을 온전히 이해하지 못했을지 몰라도, 지금의 저는
+      그 시절을 조금 더 넓은 시선으로 바라보게 되었습니다. 실력만으로는
+      부족하고, 결국 관계와 구조까지 함께 갖춰야 한다는 것을 배우게 된
+      출발점으로 남아 있습니다.
+    </p>
+
+    <p>
+      이후에는 신용 문제를 겪으며 현실적으로 무너졌다고 느꼈던 때도 있었습니다.
+      겉으로는 포기한 것처럼 보여도, 마음속 어딘가에서는 완전히 끝났다고
+      생각하지는 않았습니다. 작게라도 "다시 해보자"는 마음은 남아 있었습니다.
+    </p>
+
+    <p>
+      투자와 리스크를 감수해야 했던 시기에는 감정이 얼마나 쉽게 판단을
+      흐리게 하는지, 또 동시에 감정조절이 얼마나 중요한지도 배웠습니다.
+    </p>
+
+    <div class="quote">
+      저는 여러 번 흔들렸지만, 완전히 꺼지는 사람은 아니었습니다.
+      그 점이 지금의 저를 다시 세우는 출발점이 되었습니다.
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════ BETTER ══════ -->
+  <section class="section">
+    <span class="section-label label-better">Better</span>
+    <h2>저를 다시 세우기 시작한 힘</h2>
+    <p class="section-sub">버티는 법에서, 정리하는 법으로 조금씩 이동해 온 과정입니다.</p>
+
+    <p>
+      돌아보면 저를 다시 세우기 시작한 힘은 갑자기 생긴 것이 아니었습니다.
+      어릴 때부터 외로움과 불안을 견디며 만들어진 내적 버팀목, 그리고
+      현실에서 사람을 직접 만나며 쌓인 관찰력이 지금의 저를 만들었습니다.
+    </p>
+
+    <h3>영업을 하며 길러진 사람 읽는 힘</h3>
+
+    <p>
+      저는 영업을 하며 많은 사람을 직접 만나고, 대화를 나누고, 행동을 관찰하면서
+      사람의 몸과 생각을 읽는 감각을 길러왔습니다.
+    </p>
+
+    <p>
+      어떤 사람은 말보다 몸이 먼저 불안을 드러내고, 어떤 사람은 표정과
+      말의 속도에서 마음의 상태가 보이며, 어떤 사람은 논리보다 감정과 체면
+      때문에 결정을 망설입니다. 저는 이런 장면을 반복해서 보며, 사람의 행동과
+      심리, 관계의 흐름을 함께 읽는 법을 배웠습니다.
+    </p>
+
+    <p>
+      그래서 저는 단순히 말을 잘하는 사람보다, 사람의 상태를 보고
+      왜 망설이는지, 무엇이 불안한지, 어떤 구조가 사람을 움직이는지를
+      먼저 생각하는 사람이 되었습니다.
+    </p>
+
+    <p>
+      그리고 지금은 여기서 한 걸음 더 나아가, 실력만이 아니라 인간관계를
+      탄탄하게 쌓는 일까지 함께 해야 한다는 점을 분명히 인식하고 있습니다.
+      과거에는 능력만 있으면 된다고 생각했던 부분이 있었다면, 이제는
+      기회도, 협업도, 신뢰도 결국 사람 사이에서 자라난다는 사실을
+      받아들이고 있습니다.
+    </p>
+
+    <h3>감정에 끌려가기보다 구조를 다시 세우는 쪽으로</h3>
+
+    <p>
+      살다 보면 "왜 나만 이런가", "왜 환경이 안 따라주는가" 같은 이야기를
+      자기 안에서 만들기 쉽습니다. 저도 그런 흐름에서 완전히 자유롭다고
+      할 수는 없습니다.
+    </p>
+
+    <p>
+      하지만 저는 이제 그런 자동적인 이야기에 끌려가기보다, 실패를
+      나를 끝내는 증거로 보지 않고, 부족함을 부끄러움만으로 보지 않고,
+      나 자신을 비난하기보다 다시 정리할 대상으로 보려고 합니다.
+    </p>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <strong>이전의 저</strong>
+        <p>감정에 휘둘리고, 막막함을 크게 느끼고, 현실을 정면으로 보기가 어려운 순간들이 있었습니다.</p>
+      </div>
+      <div class="compare-card">
+        <strong>지금의 저</strong>
+        <p>감정보다 구조를 보고, 포기보다 반복을 택하고, 자기혐오보다 자기존중 쪽으로 이동하려고 합니다.</p>
+      </div>
+    </div>
+
+    <h3>AI를 만난 뒤 달라진 점</h3>
+
+    <p>
+      예전에는 제 안에 있던 생각과 관찰이 머릿속에만 머무는 경우가
+      많았습니다. AI를 활용하기 시작하면서, 그 생각을 더 빠르게 정리하고,
+      문서화하고, 실제 제안과 구조로 옮길 수 있게 되었습니다.
+    </p>
+
+    <div class="quote">
+      버티는 것만으로는 삶이 달라지지 않습니다.
+      저는 이제 버틴 시간을 바탕으로, 구조를 만들고 실행하는 쪽으로 이동하고 있습니다.
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════ GOOD ══════ -->
+  <section class="section">
+    <span class="section-label label-good">Good</span>
+    <h2>지금 제가 실제로 하고 있는 일</h2>
+    <p class="section-sub">방향 없는 사람이 아니라, 방향을 가지고 배우고 만들고 증명하는 사람으로 가고 있습니다.</p>
+
+    <p class="lead">
+      저는 AI를 단순한 유행으로 보지 않습니다.
+      오히려 제 안에 오래 있었지만 제대로 꺼내지 못했던 것들을
+      더 빠르게 형태로 만들 수 있게 해주는 도구라고 생각합니다.
+    </p>
+
+    <p>
+      저는 사람의 감정, 관계의 흐름, 브랜드의 첫인상, 공간의 분위기,
+      사람 말투의 결, 사업이 막히는 지점 같은 것을 비교적 잘 읽는 편입니다.
+      그리고 그것을 단순한 느낌으로 끝내지 않고, 문장으로 바꾸고,
+      구조로 바꾸고, 실제 도움이 되는 제안과 설계로 연결하는 방향에
+      강점이 있다고 생각합니다.
+    </p>
+
+    <h3>제가 하고 싶은 일</h3>
+
+    <p>
+      제가 하려는 일은 단순한 마케팅이 아닙니다. 사장님들이 왜 불안한지,
+      왜 문의는 오는데 결제가 안 되는지, 왜 브랜드가 약하게 보이는지,
+      왜 사람은 있는데 구조가 없는지를 함께 보고, 그것을 문서, 상담 구조,
+      브랜드 언어, 홈페이지, 고객 경험까지 하나의 흐름으로 정리하는 일을
+      하고 싶습니다.
+    </p>
+
+    <div class="role-grid">
+      <div class="role-card">
+        <span class="role-card-title">제가 활용하는 AI의 역할</span>
+        <ul>
+          <li>초안 정리</li>
+          <li>기획 문서 구조화</li>
+          <li>제안서 설계</li>
+          <li>콘텐츠 초안 제작</li>
+          <li>상담 흐름 설계</li>
+          <li>반복 작업 압축</li>
+        </ul>
+      </div>
+      <div class="role-card">
+        <span class="role-card-title">제가 집중하는 사람의 역할</span>
+        <ul>
+          <li>문제의 핵심을 읽는 일</li>
+          <li>사람의 불안과 망설임을 이해하는 일</li>
+          <li>브랜드와 사람의 첫인상을 설계하는 일</li>
+          <li>관계를 조율하고 신뢰를 만드는 일</li>
+          <li>방향을 정하고 결과를 남기는 일</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>지금의 저는 어떤 사람인가</h3>
+
+    <p>
+      저는 이제 생각만 많은 사람이 아니라, 생각을 구조로 바꾸고,
+      구조를 실행으로 옮기고, 실행을 결과물로 남기는 사람으로 살고 싶습니다.
+    </p>
+
+    <p>
+      앞으로의 사회에서는 AI 활용도가 높아질수록, 오히려 사람 사이의
+      관계를 이해하고 조율할 수 있는 사람이 더 중요해질 것이라고
+      생각합니다. 기술이 정보를 정리하고 속도를 높여줄수록, 사람은
+      더 쉽게 흔들릴 수도 있고, 판단에 도움이 필요한 순간이
+      더 많아질 수도 있기 때문입니다.
+    </p>
+
+    <p>
+      그래서 저는 단순히 AI를 잘 쓰는 사람에 머무르고 싶지 않습니다.
+      사람의 상태를 파악하고, 방향을 함께 잡아주고, 관계 안에서
+      실질적인 도움을 줄 수 있는 역할까지 키워가고 싶습니다.
+      아직 그 과정의 초입에 있다는 것을 알고 있습니다.
+    </p>
+
+    <p>
+      또한 만 34세까지 작가가 되겠다는 다짐도 마음에만 두지 않고,
+      실제로 글을 쓰고 구조를 만들며 행동으로 옮기고 있습니다.
+      저에게 글은 취미가 아니라, 삶을 정리하고 생각을 전달하는
+      또 하나의 도구입니다.
+    </p>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════ FANTASTIC FUTURE ══════ -->
+  <section class="section">
+    <span class="section-label label-future">Fantastic Future</span>
+    <h2>제가 만들고 싶은 가정과<br>다음 세대의 기반</h2>
+    <p class="section-sub">허황된 미래가 아니라, 부모님이 실제로 납득할 수 있는 책임 있는 방향을 말씀드리고 싶었습니다.</p>
+
+    <h3>제가 결혼을 선택한 이유</h3>
+
+    <p>
+      결혼을 선택한 이유는 단순히 누군가를 좋아했기 때문만은 아닙니다.
+      새미를 향한 마음 안에는 관심도 있었고, 존중도 있었고,
+      때로는 부딪힐 만큼 깊은 감정도 있었습니다.
+      하지만 시간이 지날수록 더 분명해진 것은, 이 사람과의 관계가
+      감정의 교환에 머무르지 않고, <span class="hl">함께 삶을 운영하고
+      책임지는 구조</span>가 될 수 있다는 점이었습니다.
+    </p>
+
+    <p>
+      결혼은 감정의 완성이 아니라, 함께 버티고, 함께 만들고, 함께
+      책임지는 선택이라고 생각합니다. 저는 새미와 함께하면서
+      그 가능성을 실제로 확인하게 되었습니다.
+    </p>
+
+    <h3>새미와 앞으로 해 나가고 싶은 일</h3>
+
+    <p>
+      저는 앞으로 새미와 함께 그저 생계를 버티는 삶이 아니라,
+      함께 구조를 만들고 결과를 남기는 삶을 살고 싶습니다.
+    </p>
+
+    <p>
+      제가 전략과 기획, 사람을 만나고 흐름을 읽는 역할에 강하다면,
+      새미는 구축과 실행, 지속성과 실제 운영에 강한 부분이 있습니다.
+      이 조합이 단순히 부부라는 의미를 넘어, 함께 삶을 세우고
+      일도 만들어 갈 수 있는 팀의 형태가 될 수 있다고 생각합니다.
+    </p>
+
+    <p>
+      앞으로 우리가 해 나가고 싶은 일은, 사람들의 사업을 더 잘
+      정리해드리고, 대표님들의 매출과 구조를 더 건강하게 만들어드리고,
+      감각에만 의존하지 않고 문서와 매뉴얼과 시스템까지 남겨드리는
+      방향으로 현실적인 결과를 만드는 것입니다.
+    </p>
+
+    <h3>관계는 태도로 쌓인다는 것을 배우고 있습니다</h3>
+
+    <p>
+      새미의 부모님을 만나 뵙고, 그 가족들을 직접 찾아가 대면하며
+      신뢰를 얻어가는 과정도 저에게는 중요했습니다. 관계는 말로만
+      만들어지는 것이 아니라, 태도와 반복, 책임감으로 쌓인다는 것을
+      실제로 배우고 있기 때문입니다.
+    </p>
+
+    <h3>자식에게 남기고 싶은 것</h3>
+
+    <p>
+      제가 결혼과 가정을 중요하게 생각하는 이유는, 지금 제 삶 하나를
+      안정시키는 것에서 끝나지 않기 때문입니다.
+    </p>
+
+    <p>
+      저는 앞으로 자식이 수동적으로 세상을 따라가는 사람이 아니라,
+      <span class="hl">스스로 삶의 구조를 만들어가는 사람</span>으로
+      자라기를 바랍니다. 누군가가 길을 만들어주기만 기다리는 것이 아니라,
+      스스로 배우고, 사람을 살피고, 자신의 삶을 책임 있게 운영할 줄
+      아는 사람. 저는 아이가 그렇게 자랄 수 있는 환경을 만들고 싶습니다.
+    </p>
+
+    <p>
+      남기고 싶은 것은 재산보다 태도입니다.
+      자기조절, 주도성, 실패를 배움으로 바꾸는 습관,
+      사람과의 관계에서 신뢰를 쌓는 감각.
+      이런 것들이 물려줄 수 있는 가장 실질적인 기반이라고 생각합니다.
+    </p>
+
+    <p>
+      아버지께서 최근에 "너는 이미 나보다 낫다"라고 말씀해주신 적이
+      있습니다. 그 말은 단순한 칭찬이 아니라, 다음 세대는 이전 세대보다
+      더 나아질 수 있다는 기대처럼 들렸습니다. 저는 그 기대를 제 자식에게도
+      이어가고 싶습니다. 말이 아니라, 실제로 보여주는 방식으로.
+    </p>
+
+    <div class="card-grid">
+      <div class="card">
+        <span class="card-title">제가 자식에게 남기고 싶은 태도</span>
+        <ul>
+          <li>자기 존중</li>
+          <li>실패를 배움으로 바꾸는 힘</li>
+          <li>감정에 끌려가지 않는 훈련</li>
+          <li>사람을 소중히 여기는 감각</li>
+          <li>스스로 시스템을 만드는 주도성</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="card-title">부모로서 보여주고 싶은 것</span>
+        <ul>
+          <li>위기를 넘기는 방식</li>
+          <li>관계를 맺는 태도</li>
+          <li>일을 구조화하는 습관</li>
+          <li>말보다 행동으로 증명하는 삶</li>
+          <li>가정을 책임지는 자세</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════ CLOSING (C안) ══════ -->
+  <section class="closing-section">
+    <h2>부모님께 드리고 싶은 다짐</h2>
+
+    <p>
+      아버지.
+    </p>
+
+    <p>
+      제 삶이 아직 불안해 보이실 수 있다는 걸 압니다.
+    </p>
+
+    <p>
+      하지만 저는 이제 예전의 저와는 다른 방식으로 살아가고 있습니다.
+      방향을 잡았고, 사람을 만나고 있고,
+      할 수 있는 일을 구조로 만들어가고 있습니다.
+      새미와 함께 삶을 운영하고 책임지는 가정을 세우려 합니다.
+      앞으로 태어날 자식에게는,
+      재산보다 태도를 남기는 부모가 되고 싶습니다.
+    </p>
+
+    <p>
+      앞으로의 경제와 자산 환경도 함께 생각하고 있습니다.
+      양재동의 자가 역시 무조건 안전한 자산으로만 보기보다,
+      시대 변화 속에서 더 입체적으로 바라보고 있습니다.
+      보유만이 아니라, 더 나은 구조로 연결해
+      가족의 기반을 단단하게 만드는 방향으로 함께 고려하고 싶습니다.
+    </p>
+
+    <p class="closing-pledge">
+      큰 말씀을 드리기보다, 하나씩 해내는 것으로 보여드리겠습니다.<br>
+      흔들리더라도, 방향 없이 살지는 않겠습니다.
+    </p>
+
+    <div class="signature">
+      <span class="signature-name">— 규현 올림</span>
+    </div>
+  </section>
+
+  <!-- ══════ P.S. ══════ -->
+  <div class="ps-divider">
+    <span class="ps-label">P.S.</span>
+
+    <div class="ps-context">
+      위의 내용은 2025년 4월경부터 12월까지 AI를 활용하고,
+      12월부터는 AI와 더 면밀하게 교류하며 쌓아온 작업물을 바탕으로 정리한
+      저의 생각 모음입니다. 지금부터는 제 생각을 직접 적습니다.
+    </div>
+
+    <div class="ps-body">
+
+      <p>
+        3월 27일 오전 3시. 새미와 함께 누운 뒤 잠을 청하려는데,
+        밖에서 금속 재질의 음향이 들려옵니다.
+        이곳은 영등포 공구상가 바로 옆이니까요.
+      </p>
+
+      <p class="ps-aside">
+        한번 모셔 오겠다 한 게 벌써 몇 달이 되었습니다.
+        4월에는 꼭 모시겠습니다.
+      </p>
+
+      <p>
+        저는 金의 사주입니다.
+        금과 함께 삶을 사는 장인분들이 바로 곁에 계시고,
+        공명하는 파장을 느낄 수 있는 공간에 살고 있습니다.
+        "잠이 안 온다"고 투덜거리기보다, 이런 생각이 들었습니다.
+        내가 지금 무언가를 사고(思考)할 때이기에,
+        밖에서 공명이 들려오는 거라고.
+      </p>
+
+      <p>
+        생각은 아버지에게로 갔습니다.
+        약속을 어떻게든 지키는 분이, 감기로 등산 약속을 취소할 정도라면
+        몸 상태가 어떠신 건지.
+        잔소리라고만 들었던 말들, 회초리를 들던 그 시절을 떠올려보면,
+        언제나 우렁찰 것 같던 아버지의 건강은
+        당연한 게 아니었구나 싶습니다.
+      </p>
+
+      <p>
+        그래서 잠시, 이런 생각까지 하게 되었습니다.
+        아버지가 없는 세상은 나에게 어떤 의미로 다가올까.
+        아무 조건 없이 내가 잘 되길 원하는 사람,
+        그 0번은 최명용일 텐데.
+        아직 자식이 없는 저로서는,
+        그 무게를 온전히 이해한다고 말씀드리기 어렵습니다.
+      </p>
+
+      <p>
+        아버지는 병화(丙火) 일간의 사주를 지니고 계십니다.
+        제가 어릴 적에는 金의 기운이 태동할 때라 그런지,
+        아버지의 온기를 화염처럼 느꼈을 수도 있겠다고 생각합니다.
+        하지만 지금은 다르게 봅니다.
+        아버지는 저를 담금질해주는 존재였습니다.
+      </p>
+
+      <p>
+        그렇게 생각에 생각을 덧입혀보니,
+        저는 지독하게도 '내 자신'만을 바라보고 살아왔습니다.
+        여행도 함께 가지 못했고, 깊이 있는 시간을 만들지 못했습니다.
+      </p>
+
+      <p>
+        아빠가 되는 일은, 책임감 없이 살아왔던 저에게
+        큰 고민이었던 것이 사실입니다.
+        하지만 그 자리에 서는 것 자체가 고통이 아니라,
+        고통이 그릇을 키우는 과정이라고 생각하니 오히려 기대가 됩니다.
+        수동적으로 살 수밖에 없다고 생각하기보다,
+        그 과정 안에서 행복을 찾고 전달하는 삶을 살겠습니다.
+      </p>
+
+      <p>
+        본인의 이야기를 자식에게 잘 하지 않는 것이
+        경상도 남자의 특성인지, 아버지만의 특성인지,
+        알아가려고 합니다.
+        부자 간에 소통을 잘 해나가는 것이
+        결국 아버지를 위해서도, 저를 위해서도
+        더 나은 삶을 만드는 일이라고 생각합니다.
+      </p>
+
+      <p class="ps-final">
+        건강하게 살아가실 수 있도록,
+        함께 다양한 장소에서 대화를 나누고 시간을 보내고 싶습니다.<br>
+        삭녕 최가 부자의 앞으로가 기대됩니다.
+      </p>
+
+      <div class="ps-sign">
+        <div class="ps-sign-name">규현 올림</div>
+        <div class="ps-sign-date">2026. 3. 27. 새벽, 영등포에서</div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
