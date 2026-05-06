@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f1ece2">
+<title>결혼 · 신혼집 초기 세팅 정리</title>
+
+<!-- Open Graph / KakaoTalk -->
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://letterforchoi.netlify.app/wedding.html"/>
+<meta property="og:title" content="결혼 · 신혼집 초기 세팅 정리"/>
+<meta property="og:description" content="처음보다 줄여서 현실 기준으로 다시 정리한 자료입니다. 6,000만 원 기준, 7,000만 원 안쪽, 단계별 가능."/>
+<meta property="og:image" content="https://letterforchoi.netlify.app/og-image.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:locale" content="ko_KR"/>
+
+<!-- Twitter Card (fallback) -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="결혼 · 신혼집 초기 세팅 정리"/>
+<meta name="twitter:description" content="처음보다 줄여서 현실 기준으로 다시 정리한 자료입니다."/>
+<meta name="twitter:image" content="https://letterforchoi.netlify.app/og-image.jpg"/>
+<style>
+  :root {
+    --bg: #f1ece2;
+    --paper: #fbf7ef;
+    --paper-warm: #fdf9f1;
+    --ink: #2a241c;
+    --ink-soft: #443a2e;
+    --muted: #6b6258;
+    --soft-muted: #908778;
+    --line: #ddd4c2;
+    --line-soft: #ece4d4;
+    --accent: #5c4528;
+    --accent-deep: #3a2c19;
+    --tint: #ede4d2;
+    --tint-soft: #f5ecda;
+    --green: #2d4a3a;
+    --green-soft: #e3eae3;
+    --rust: #7a4530;
+    --rust-soft: #f3e8de;
+  }
+
+  * { box-sizing: border-box; -webkit-text-size-adjust: 100%; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Pretendard", "Segoe UI", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    letter-spacing: -0.012em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  .deck {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 18px 14px 56px;
+  }
+
+  /* Slide ------------------------------------------------------- */
+  .slide {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 30px 22px 60px;
+    margin: 0 0 16px;
+    position: relative;
+  }
+
+  .slide-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  .slide-head .num {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    color: var(--soft-muted);
+  }
+
+  .slide-head .label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+  }
+
+  .slide-head .rule {
+    flex: 1;
+    height: 1px;
+    background: var(--line-soft);
+  }
+
+  /* First slide kicker (no number) */
+  .kicker-cover {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    color: var(--accent);
+    padding-bottom: 16px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+  }
+
+  /* Headings ---------------------------------------------------- */
+  h1, h2, h3, p { margin: 0; }
+
+  h1 {
+    font-size: 26px;
+    line-height: 1.32;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+
+  h2 {
+    font-size: 21px;
+    line-height: 1.4;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+
+  .lead {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+  }
+
+  .lead.muted { color: var(--muted); }
+
+  /* Cover summary box ------------------------------------------- */
+  .cover-summary {
+    margin-top: 22px;
+    padding: 4px 0;
+    border-top: 2px solid var(--accent-deep);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .cover-line {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 16px 4px;
+    border-bottom: 1px dashed var(--line-soft);
+    gap: 12px;
+  }
+
+  .cover-line:last-child { border-bottom: none; }
+
+  .cover-line .l-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: -0.005em;
+    flex-shrink: 0;
+  }
+
+  .cover-line .l-value {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--accent-deep);
+    letter-spacing: -0.025em;
+    text-align: right;
+  }
+
+  .cover-line .l-value.lg { font-size: 26px; }
+
+  .cover-foot {
+    margin-top: 18px;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* Scenario cards ---------------------------------------------- */
+  .scenarios {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .scenario {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    background: var(--paper-warm);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+
+  .scenario.is-base {
+    border-color: var(--accent);
+    background: var(--tint-soft);
+    border-width: 1.5px;
+  }
+
+  .scenario .s-name {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+  }
+
+  .scenario.is-base .s-name { color: var(--accent-deep); }
+
+  .scenario .s-desc {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  .scenario .s-amt {
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--accent-deep);
+    letter-spacing: -0.025em;
+    white-space: nowrap;
+  }
+
+  /* Tables ------------------------------------------------------ */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+    font-size: 14px;
+  }
+
+  .data-table th {
+    text-align: left;
+    padding: 10px 8px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--soft-muted);
+    text-transform: uppercase;
+    border-bottom: 1.5px solid var(--line);
+    background: transparent;
+  }
+
+  .data-table th:last-child { text-align: right; }
+
+  .data-table td {
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--line-soft);
+    vertical-align: top;
+    color: var(--ink-soft);
+  }
+
+  .data-table td:first-child { color: var(--ink); }
+
+  .data-table td:last-child {
+    text-align: right;
+    font-weight: 700;
+    color: var(--accent-deep);
+    white-space: nowrap;
+  }
+
+  .data-table tr:last-child td { border-bottom: none; }
+
+  .data-table tfoot td {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--ink);
+    border-top: 1.5px solid var(--accent-deep);
+    border-bottom: none;
+    padding-top: 14px;
+  }
+
+  .data-table tfoot td:last-child { color: var(--accent-deep); }
+
+  /* Note --------------------------------------------------------- */
+  .note {
+    margin-top: 20px;
+    padding: 14px 16px;
+    border-left: 3px solid var(--accent);
+    background: var(--tint-soft);
+    border-radius: 0 8px 8px 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+
+  .note b { color: var(--accent-deep); font-weight: 800; }
+
+  /* Two columns -------------------------------------------------- */
+  .dual {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .dual .col {
+    padding: 16px 18px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--paper-warm);
+  }
+
+  .dual .col.is-green {
+    border-color: rgba(45, 74, 58, 0.25);
+    background: var(--green-soft);
+  }
+
+  .dual .col.is-rust {
+    border-color: rgba(122, 69, 48, 0.22);
+    background: var(--rust-soft);
+  }
+
+  .col .col-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  .col.is-green .col-label {
+    color: var(--green);
+    background: rgba(45, 74, 58, 0.1);
+  }
+  .col.is-rust .col-label {
+    color: var(--rust);
+    background: rgba(122, 69, 48, 0.1);
+  }
+
+  .col .col-body {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  /* Crowd line --------------------------------------------------- */
+  .crowd {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .crowd .c-cell {
+    padding: 14px 16px;
+    background: var(--paper-warm);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+
+  .crowd .c-name {
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
+  }
+
+  .crowd .c-num {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--accent-deep);
+    letter-spacing: -0.02em;
+  }
+
+  /* Timeline ----------------------------------------------------- */
+  .timeline {
+    margin-top: 18px;
+    display: grid;
+    gap: 10px;
+  }
+
+  .tl-step {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 14px;
+    padding: 16px;
+    background: var(--paper-warm);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    align-items: start;
+  }
+
+  .tl-step .stage {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--paper);
+    background: var(--accent-deep);
+    padding: 6px 0;
+    border-radius: 6px;
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  .tl-step .body b {
+    display: block;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--ink);
+    margin-bottom: 3px;
+    letter-spacing: -0.02em;
+  }
+
+  .tl-step .body .when {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+
+  .tl-step .body .amt {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--accent-deep);
+    letter-spacing: -0.02em;
+    display: inline-block;
+    padding-top: 6px;
+    border-top: 1px dashed var(--line);
+  }
+
+  /* Quote -------------------------------------------------------- */
+  .quote-block {
+    margin-top: 20px;
+    padding: 24px 20px;
+    background: var(--paper-warm);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    position: relative;
+  }
+
+  .quote-block::before {
+    content: "“";
+    position: absolute;
+    top: 8px;
+    left: 18px;
+    font-size: 38px;
+    color: var(--tint);
+    font-family: Georgia, serif;
+    line-height: 1;
+  }
+
+  .quote-block p {
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--ink);
+    font-weight: 500;
+    letter-spacing: -0.012em;
+    padding-left: 4px;
+  }
+
+  .quote-block .em {
+    font-weight: 800;
+    color: var(--accent-deep);
+    background: linear-gradient(transparent 60%, var(--tint) 60%);
+    padding: 0 2px;
+  }
+
+  /* Footer tag --------------------------------------------------- */
+  .footer-tag {
+    position: absolute;
+    left: 22px;
+    bottom: 18px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    color: var(--soft-muted);
+    text-transform: uppercase;
+  }
+
+  .doc-foot {
+    text-align: center;
+    margin-top: 18px;
+    padding: 10px;
+    color: var(--soft-muted);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+
+  /* Back link to main letter */
+  .backlink-wrap {
+    margin-top: 24px;
+    text-align: center;
+  }
+
+  .backlink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+    padding: 12px 18px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--paper);
+    transition: background 0.2s ease, border-color 0.2s ease;
+    letter-spacing: -0.005em;
+  }
+
+  .backlink:hover {
+    background: var(--tint-soft);
+    border-color: var(--accent);
+  }
+
+  .backlink .arrow {
+    transition: transform 0.2s ease;
+  }
+
+  .backlink:hover .arrow {
+    transform: translateX(-3px);
+  }
+
+  /* Tablet ------------------------------------------------------- */
+  @media (min-width: 640px) {
+    .deck { padding: 28px 22px 64px; }
+    .slide { padding: 40px 36px 64px; border-radius: 22px; margin: 0 0 22px; }
+    h1 { font-size: 34px; line-height: 1.25; margin-bottom: 16px; }
+    h2 { font-size: 26px; line-height: 1.32; margin-bottom: 12px; }
+    .lead { font-size: 16px; }
+    .cover-line .l-value.lg { font-size: 32px; }
+    .cover-line .l-value { font-size: 22px; }
+
+    .scenarios { grid-template-columns: repeat(3, 1fr); }
+    .scenario {
+      grid-template-columns: 1fr;
+      align-content: start;
+      padding: 18px 20px;
+    }
+    .scenario .s-amt { font-size: 22px; margin-top: 8px; }
+
+    .dual { grid-template-columns: 1fr 1fr; }
+    .data-table { font-size: 15px; }
+    .data-table th, .data-table td { padding: 14px 12px; }
+
+    .tl-step { grid-template-columns: 64px 1fr; padding: 18px 22px; }
+    .tl-step .stage { padding: 7px 0; }
+    .tl-step .body b { font-size: 16px; }
+
+    .quote-block p { font-size: 18px; line-height: 1.85; }
+    .quote-block::before { font-size: 48px; top: 12px; left: 22px; }
+
+    .footer-tag { left: 36px; bottom: 22px; }
+  }
+
+  /* Desktop ------------------------------------------------------ */
+  @media (min-width: 980px) {
+    .deck { max-width: 880px; padding: 36px 26px 80px; }
+    .slide { padding: 52px 50px 76px; }
+    h1 { font-size: 42px; }
+    h2 { font-size: 30px; }
+    .lead { font-size: 17px; }
+    .cover-line .l-value.lg { font-size: 38px; }
+  }
+
+  /* Print -------------------------------------------------------- */
+  @media print {
+    @page { size: A4; margin: 14mm; }
+    body { background: white; color: var(--ink); }
+    .deck { max-width: 100%; padding: 0; }
+    .slide {
+      page-break-after: always;
+      break-after: page;
+      box-shadow: none;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 28mm 22mm 28mm;
+      margin: 0 0 0;
+    }
+    .slide:last-child { page-break-after: auto; }
+    .doc-foot { display: none; }
+    .backlink-wrap { display: none; }
+    .footer-tag { color: var(--soft-muted); }
+  }
+</style>
+</head>
+<body>
+<main class="deck">
+
+  <!-- ============ Slide 1 — 표지 / 한 장 요약 ============ -->
+  <section class="slide">
+    <span class="kicker-cover">결혼 · 신혼집 초기 세팅 정리</span>
+    <h1>처음보다 줄여서,<br>현실 기준으로 다시 정리했습니다.</h1>
+    <p class="lead">예식 비용과 축의금으로 상쇄되는 부분, 기존 보증금, 월세 옵션집까지 모두 반영해 무리하지 않는 선에서 정리한 내용입니다.</p>
+
+    <div class="cover-summary">
+      <div class="cover-line">
+        <span class="l-label">기준 금액</span>
+        <span class="l-value lg">6,000만 원</span>
+      </div>
+      <div class="cover-line">
+        <span class="l-label">변동 시 상한</span>
+        <span class="l-value">7,000만 원 안쪽</span>
+      </div>
+      <div class="cover-line">
+        <span class="l-label">전달 방식</span>
+        <span class="l-value">단계별 가능</span>
+      </div>
+    </div>
+
+    <p class="cover-foot">한 번에 전부가 아니라, 필요한 시점에 맞춰 나누어 받을 수 있도록 구성했습니다.</p>
+
+    <span class="footer-tag">Summary</span>
+  </section>
+
+  <!-- ============ Slide 2 — 전달 방식 ============ -->
+  <section class="slide">
+    <div class="slide-head">
+      <span class="num">01</span>
+      <span class="label">전달 방식</span>
+      <span class="rule"></span>
+    </div>
+    <h2>일시불보다,<br>총액 상한 안에서 시점에 맞추는 방식이 안정적입니다.</h2>
+    <p class="lead muted">변동 폭을 미리 잡아두고, 그 안에서 단계별로 정산하는 흐름으로 정리했습니다.</p>
+
+    <div class="scenarios">
+      <div class="scenario">
+        <div>
+          <div class="s-name">최소 안정선</div>
+          <div class="s-desc">예식 선지출과<br>집 이동 최소 대응</div>
+        </div>
+        <div class="s-amt">5,500만 원</div>
+      </div>
+      <div class="scenario is-base">
+        <div>
+          <div class="s-name">기준 ✱</div>
+          <div class="s-desc">예식 + 집 추가금<br>+ 초기 세팅</div>
+        </div>
+        <div class="s-amt">6,000만 원</div>
+      </div>
+      <div class="scenario">
+        <div>
+          <div class="s-name">변동 상한</div>
+          <div class="s-desc">예식 추가비, 집 조건 변화,<br>예비비 포함</div>
+        </div>
+        <div class="s-amt">7,000만 원</div>
+      </div>
+    </div>
+
+    <div class="note">
+      핵심은 “많이 필요합니다”가 아니라, <b>상쇄되는 부분을 먼저 반영한 뒤 실제 필요한 흐름만 정리해서 말씀드리는 것</b>입니다.
+    </div>
+
+    <span class="footer-tag">Plan</span>
+  </section>
+
+  <!-- ============ Slide 3 — 예식 비용 ============ -->
+  <section class="slide">
+    <div class="slide-head">
+      <span class="num">02</span>
+      <span class="label">예식 비용 조사</span>
+      <span class="rule"></span>
+    </div>
+    <h2>예식 관련 비용은<br>약 4,000만~4,400만 원입니다.</h2>
+    <p class="lead muted">현재까지 조사한 항목별 단가입니다.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>항목</th><th>예상 비용</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>예식 비용</td><td>약 3,000만 원</td></tr>
+        <tr><td>스드메</td><td>300만~400만 원</td></tr>
+        <tr><td>신랑 예복</td><td>대여 50만 / 맞춤 150만 원</td></tr>
+        <tr><td>반지</td><td>200만~300만 원</td></tr>
+        <tr><td>혼주 한복·양복·헤어메이크업</td><td>약 150만 원</td></tr>
+        <tr><td>본식 촬영</td><td>약 50만 원</td></tr>
+        <tr><td>부케</td><td>약 20만 원</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td>예식 전체 예상</td><td>4,000만~4,400만 원</td></tr>
+      </tfoot>
+    </table>
+
+    <div class="note">
+      청첩장, 식전영상, 사회자·축가 사례비, 부대비를 포함해 보수적으로 잡았습니다.
+    </div>
+
+    <span class="footer-tag">Wedding Cost</span>
+  </section>
+
+  <!-- ============ Slide 4 — 축의금 상쇄 ============ -->
+  <section class="slide">
+    <div class="slide-head">
+      <span class="num">03</span>
+      <span class="label">축의금으로 상쇄되는 부분</span>
+      <span class="rule"></span>
+    </div>
+    <h2>예식비 전부가 순부담은 아닙니다.<br>1,500만~2,000만 원 정도 상쇄됩니다.</h2>
+
+    <div class="crowd">
+      <div class="c-cell">
+        <div class="c-name">아버지 측 하객</div>
+        <div class="c-num">약 100명</div>
+      </div>
+      <div class="c-cell">
+        <div class="c-name">규현 측 하객</div>
+        <div class="c-num">약 50명</div>
+      </div>
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>평균 축의금 기준</th><th>상쇄 예상</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1인 10만 원</td><td>약 1,500만 원</td></tr>
+        <tr><td>1인 12만 원</td><td>약 1,800만 원</td></tr>
+        <tr><td>1인 15만 원</td><td>약 2,250만 원</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note">
+      다만 계약금과 잔금은 먼저 나가야 하기 때문에, <b>축의금은 사후 상쇄 구조</b>이고 초기에 필요한 흐름은 별도로 잡아두었습니다.
+    </div>
+
+    <span class="footer-tag">Cash Offset</span>
+  </section>
+
+  <!-- ============ Slide 5 — 집·초기 세팅 ============ -->
+  <section class="slide">
+    <div class="slide-head">
+      <span class="num">04</span>
+      <span class="label">집과 초기 세팅</span>
+      <span class="rule"></span>
+    </div>
+    <h2>집은 새 보증금 전체가 아니라,<br>기존 보증금에 더하는 금액과 초기 세팅비만 반영합니다.</h2>
+
+    <div class="dual">
+      <div class="col is-green">
+        <span class="col-label">상쇄 가능</span>
+        <div class="col-body">현재 보증금을 그대로 활용하고,<br>월세 옵션집을 선택하면 가전·가구의 일부가 해결됩니다.</div>
+      </div>
+      <div class="col is-rust">
+        <span class="col-label">추가 필요</span>
+        <div class="col-body">추가 보증금, 이사·중개·정리비,<br>가전·가구 보완, 생활 초기 세팅비.</div>
+      </div>
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>항목</th><th>예상 비용</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>기존 보증금에 더할 추가금</td><td>1,000만~2,000만 원</td></tr>
+        <tr><td>이사비·중개비·정리비</td><td>300만~700만 원</td></tr>
+        <tr><td>가전·가구·생활 세팅 보완</td><td>500만~1,000만 원</td></tr>
+        <tr><td>예비비</td><td>500만~1,000만 원</td></tr>
+      </tbody>
+    </table>
+
+    <span class="footer-tag">Home Setup</span>
+  </section>
+
+  <!-- ============ Slide 6 — 단계별 ============ -->
+  <section class="slide">
+    <div class="slide-head">
+      <span class="num">05</span>
+      <span class="label">시점별 흐름</span>
+      <span class="rule"></span>
+    </div>
+    <h2>시점에 맞춰 나누면<br>부담과 변동성이 줄어듭니다.</h2>
+    <p class="lead muted">총액은 동일하지만, 한 번에 모이지 않고 시점별로 필요한 만큼만 움직이는 구조입니다.</p>
+
+    <div class="timeline">
+      <div class="tl-step">
+        <div class="stage">1차</div>
+        <div class="body">
+          <b>계약·초기 준비</b>
+          <div class="when">예식장, 스드메, 촬영, 예복, 반지 계약 및 선결제</div>
+          <div class="amt">2,000만 원</div>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="stage">2차</div>
+        <div class="body">
+          <b>본식 전 잔금</b>
+          <div class="when">예식 잔금, 혼주 준비, 청첩장, 부대비</div>
+          <div class="amt">1,500만~2,000만 원</div>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="stage">3차</div>
+        <div class="body">
+          <b>집 이동 시점</b>
+          <div class="when">추가 보증금, 이사비, 중개비, 초기 세팅</div>
+          <div class="amt">1,500만 원</div>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="stage">4차</div>
+        <div class="body">
+          <b>예비비</b>
+          <div class="when">예상 외 비용, 병원·생활 변수 대응</div>
+          <div class="amt">500만~1,000만 원</div>
+        </div>
+      </div>
+    </div>
+
+    <span class="footer-tag">Timing</span>
+  </section>
+
+  <!-- ============ Slide 7 — 마지막 메시지 ============ -->
+  <section class="slide">
+    <div class="slide-head">
+      <span class="num">06</span>
+      <span class="label">마지막으로 드리는 말씀</span>
+      <span class="rule"></span>
+    </div>
+    <h2>아버지께,</h2>
+
+    <div class="quote-block">
+      <p>
+        알아보니 처음 생각보다 <span class="em">상쇄되는 부분</span>이 있어서, 금액을 다시 줄여서 정리했습니다.
+        <br><br>
+        <span class="em">6,000만 원 기준</span>으로 보고, 변동이 생겨도 <span class="em">7,000만 원 안쪽</span>에서 마무리하겠습니다.
+        <br><br>
+        한 번에 전부가 아니어도 괜찮고, 필요한 시점에 맞춰 <span class="em">단계별로 주셔도</span> 됩니다.
+      </p>
+    </div>
+
+    <div class="note">
+      받은 금액은 항목별로 사용 내역을 정리해서 공유드리고, 남는 금액은 임의로 쓰지 않고 예비비로 묶어두거나 다시 말씀드리는 방식으로 관리하겠습니다.
+    </div>
+
+    <span class="footer-tag">Final Note</span>
+  </section>
+
+  <p class="doc-foot">— 규현 —</p>
+
+  <div class="backlink-wrap">
+    <a href="./" class="backlink"><span class="arrow">←</span> 함께 드린 편지로 돌아가기</a>
+  </div>
+</main>
+</body>
+</html>
