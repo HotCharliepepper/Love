@@ -482,6 +482,136 @@
     margin-top: 6px;
   }
 
+  /* ── Companion Document ── */
+  .companion {
+    margin-top: 64px;
+    padding-top: 48px;
+    border-top: 1px solid rgba(226, 197, 145, 0.12);
+    position: relative;
+  }
+
+  .companion::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(226,197,145,0.3), transparent);
+  }
+
+  .companion-tag {
+    font-family: var(--sans);
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+    background: var(--gold-dim);
+    color: var(--gold);
+    border: 1px solid rgba(226, 197, 145, 0.18);
+  }
+
+  .companion-card {
+    border: 1px solid rgba(226, 197, 145, 0.18);
+    background: linear-gradient(180deg, rgba(226, 197, 145, 0.045), rgba(226, 197, 145, 0.01));
+    border-radius: 18px;
+    padding: 26px 24px;
+  }
+
+  .companion-eyebrow {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.85;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .companion-title {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 14px;
+    line-height: 1.45;
+    letter-spacing: -0.02em;
+  }
+
+  .companion-desc {
+    font-family: var(--sans);
+    font-size: 14.5px;
+    color: var(--text-soft);
+    line-height: 1.85;
+    margin-bottom: 18px;
+  }
+
+  .companion-points {
+    list-style: none;
+    padding: 18px 0 0;
+    margin: 0 0 24px;
+    border-top: 1px dashed rgba(226, 197, 145, 0.18);
+  }
+
+  .companion-points li {
+    font-family: var(--sans);
+    font-size: 13.5px;
+    color: var(--text-muted);
+    padding: 5px 0 5px 16px;
+    position: relative;
+    line-height: 1.65;
+  }
+
+  .companion-points li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 13px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0.55;
+  }
+
+  .companion-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    text-decoration: none;
+    padding: 12px 20px;
+    border: 1px solid rgba(226, 197, 145, 0.32);
+    border-radius: 10px;
+    background: rgba(226, 197, 145, 0.05);
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    letter-spacing: 0.01em;
+  }
+
+  .companion-link:hover {
+    background: rgba(226, 197, 145, 0.12);
+    border-color: rgba(226, 197, 145, 0.5);
+  }
+
+  .companion-link .arrow {
+    transition: transform 0.2s ease;
+    font-weight: 600;
+  }
+
+  .companion-link:hover .arrow {
+    transform: translateX(4px);
+  }
+
   /* ── Responsive ── */
   @media (max-width: 640px) {
     html { font-size: 18px; }
@@ -491,6 +621,9 @@
     .compare-grid,
     .role-grid { grid-template-columns: 1fr; }
     .hero h1 { font-size: 30px; }
+    .companion-card { padding: 22px 20px; }
+    .companion-title { font-size: 1.2rem; }
+    .companion-link { width: 100%; justify-content: center; }
   }
 </style>
 </head>
@@ -890,6 +1023,28 @@
       <span class="signature-name">— 규현 올림</span>
     </div>
   </section>
+
+  <!-- ══════ COMPANION DOCUMENT ══════ -->
+  <aside class="companion">
+    <span class="companion-tag">동봉</span>
+    <div class="companion-card">
+      <span class="companion-eyebrow">함께 정리한 실무 문서</span>
+      <h3 class="companion-title">결혼 · 신혼집 초기 세팅 정리</h3>
+      <p class="companion-desc">
+        말씀드린 다짐을 숫자와 시점으로 옮긴 자료입니다.
+        예식 비용, 축의금 상쇄, 기존 보증금까지 모두 반영해
+        무리하지 않는 선에서 정리했습니다.
+      </p>
+      <ul class="companion-points">
+        <li>기준 6,000만 원 / 변동 시 7,000만 원 안쪽</li>
+        <li>한 번에 전부가 아니라 시점에 맞춰 단계별 가능</li>
+        <li>사용 내역은 항목별로 정리해 공유</li>
+      </ul>
+      <a href="./wedding.html" class="companion-link">
+        문서 보기 <span class="arrow">→</span>
+      </a>
+    </div>
+  </aside>
 
   <!-- ══════ P.S. ══════ -->
   <div class="ps-divider">
